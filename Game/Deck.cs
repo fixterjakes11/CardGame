@@ -8,9 +8,12 @@ namespace Game
     {
 
         public string Card { get; private set; }
+        /// <summary>
+        /// Козырь
+        /// </summary>
         public string TrumpCard { get; private set; }
-        public Player Player1 { get; set; }
-        public Player Bot { get; set; }
+        public Player Player1 { get; private set; }
+        public Player Bot { get; private set; }
 
         public Deck(Player player1, Player bot)
         {
@@ -70,9 +73,11 @@ namespace Game
         {
             Player1.Option = GetCard();
             Bot.Option = GetCard();
-            return $"Игрок взял карту: {Player1.Option}\n" +
+            return $"Денег у Игрока {Player1.Money} ----- Денег у бота: {Bot.Money}\n" +
+                    $"Игрок взял карту: {Player1.Option}\n" +
                     $"Бот взял карту: {Bot.Option}\n" +
-                    $"в колоде остало {CardType.Count}";
+                    $"в колоде остало {CardType.Count}\n"
+                    ;
         }
 
     }

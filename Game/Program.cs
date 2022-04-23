@@ -14,7 +14,7 @@ namespace Game
                 {
                     Game();
                 }
-                else
+                if(Console.ReadKey().Key == ConsoleKey.D2)
                 {
                     break;
                 }
@@ -34,6 +34,7 @@ namespace Game
             while (true)
             {
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
+
                 {
                     Console.WriteLine(deck.GetInfo());
                 }
