@@ -17,8 +17,8 @@ namespace Game.Tests
             string expected = deck.CardType[number];
             var actual = deck.GetCard(number);
             Assert.AreEqual(expected, actual);
-
         }
+
         [TestMethod()]
         public void GetCardTest_delete()
         {
@@ -29,6 +29,37 @@ namespace Game.Tests
             Assert.AreNotEqual(expected, actual);
 
         }
+
+        [TestMethod()]
+        public void GetCardTest_ex()
+        {
+            int number = 37;
+            Deck deck = new Deck();
+            string expected = "В колоде такой карты не обнаружено";
+            string actual = deck.GetCard(number);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void GetCardTest_ex1()
+        {
+            int number = -1;
+            Deck deck = new Deck();
+            string expected = "В колоде такой карты не обнаружено";
+            string actual = deck.GetCard(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void GetCardTest_QueenOfSpades()
+        {
+            int number = 8;
+            Deck deck = new Deck();
+            string expected = "Дама Пики";
+            var actual = deck.GetCard(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+
 
         [TestMethod()]
         public void SetTrumpTest_10()
@@ -47,6 +78,34 @@ namespace Game.Tests
             string expected = deck.SetTrump(number);
             string actual = deck.SetTrump(number);
             Assert.AreNotEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void SetTrumpTest_ex()
+        {
+            Deck deck = new Deck();
+            int number = 37;
+            string expected = "В колоде такой карты не обнаружено";
+            string actual = deck.SetTrump(number);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void SetTrumpTest_ex5()
+        {
+            Deck deck = new Deck();
+            int number = -5;
+            string expected = "В колоде такой карты не обнаружено";
+            string actual = deck.SetTrump(number);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void SetTrumpTest_KingOfSpades()
+        {
+            Deck deck = new Deck();
+            int number = 4;
+            string expected = "Кароль Пики";
+            string actual = deck.SetTrump(number);
+            Assert.AreEqual(expected, actual);
         }
 
 

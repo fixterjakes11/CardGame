@@ -79,7 +79,7 @@ namespace Game
         {
             if (rndNumber > CardType.Count || rndNumber < 0)
             {
-                throw new ArgumentException("В колоде такой карты не обнаружено");
+                return "В колоде такой карты не обнаружено";
             }
             TrumpCard = CardType[rndNumber];
             CardType.RemoveAt(rndNumber);
@@ -94,7 +94,7 @@ namespace Game
         {
             if (rndNumber > CardType.Count || rndNumber < 0)
             {
-                throw new ArgumentException("В колоде такой карты не обнаружено");
+                return "В колоде такой карты не обнаружено";
             }
             if (CardType.Count == 0)
             {
